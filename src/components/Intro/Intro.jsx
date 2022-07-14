@@ -4,8 +4,7 @@ import Vector1 from "../../img/Vector1.png";
 import Vector2 from "../../img/Vector2.png";
 // import boy from "../../img/boy.png";
 import glassesimoji from "../../img/glassesimoji.png";
-import thumbup from "../../img/thumbup.png";
-import crown from "../../img/crown.png";
+
 import FloatinDiv from "../FloatingDiv/FloatingDiv";
 import Github from "../../img/github.png";
 import LinkedIn from "../../img/linkedin.png";
@@ -13,6 +12,11 @@ import Instagram from "../../img/instagram.png";
 import { themeContext } from "../../Context";
 import { motion } from "framer-motion";
 import { Link } from "react-scroll";
+
+import crown from "../../img/crown.png";
+import thumbup from "../../img/thumbup.png";
+// import { FcAreaChart } from "react-icons/fc";
+
 const Intro = () => {
   // Transition
   const transition = { duration: 2, type: "spring" };
@@ -87,7 +91,7 @@ const Intro = () => {
           transition={transition}
           className="floating-div"
         >
-          <FloatinDiv img={crown} text1="Web" text2="Developer" />
+          <FloatinDiv img={crown} text1="AI Model" text2="Developer" />
         </motion.div>
 
         {/* animation */}
@@ -98,7 +102,7 @@ const Intro = () => {
           className="floating-div"
         >
           {/* floatinDiv mein change hy dark mode ka */}
-          <FloatinDiv img={thumbup} text1="Best Design" text2="Award" />
+          <FloatinDiv img={thumbup} text1="Data" text2="Analyst" />
         </motion.div>
 
         <div className="blur" style={{ background: "rgb(238 210 255)" }}></div>
