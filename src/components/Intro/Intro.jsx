@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import "./Intro.css";
 import Vector1 from "../../img/Vector1.png";
 import Vector2 from "../../img/Vector2.png";
-import boy from "../../img/boy.png";
+// import boy from "../../img/boy.png";
 import glassesimoji from "../../img/glassesimoji.png";
 import thumbup from "../../img/thumbup.png";
 import crown from "../../img/crown.png";
@@ -21,17 +21,22 @@ const Intro = () => {
   const theme = useContext(themeContext);
   const darkMode = theme.state.darkMode;
 
+  const openInNewTab = (url) => {
+    const newWindow = window.open(url, "_blank", "noopener,noreferrer");
+    if (newWindow) newWindow.opener = null;
+  };
+
   return (
     <div className="Intro" id="Intro">
       {/* left name side */}
       <div className="i-left">
         <div className="i-name">
           {/* yahan change hy darkmode ka */}
-          <span style={{ color: darkMode ? "white" : "" }}>Hy! I Am</span>
-          <span>Andrew Thomas</span>
+          <span style={{ color: darkMode ? "white" : "" }}>Hello! I Am</span>
+          <span>Lukas Purba W</span>
           <span>
-            Frontend Developer with high level of experience in web designing
-            and development, producting the Quality work
+            Data analyst with high level of knowledge in machine learning,
+            neural network, and data processing.
           </span>
         </div>
         <Link to="contact" smooth={true} spy={true}>
@@ -39,16 +44,34 @@ const Intro = () => {
         </Link>
         {/* social icons */}
         <div className="i-icons">
-          <img src={Github} alt="" />
-          <img src={LinkedIn} alt="" />
-          <img src={Instagram} alt="" />
+          <img
+            src={Github}
+            alt="https://github.com/LukasPurbaW"
+            onClick={() => {
+              openInNewTab("https://github.com/LukasPurbaW");
+            }}
+          />
+          <img
+            src={LinkedIn}
+            alt="https://www.linkedin.com/in/lukas-purba-w/"
+            onClick={() => {
+              openInNewTab("https://www.linkedin.com/in/lukas-purba-w/");
+            }}
+          />
+          <img
+            src={Instagram}
+            alt="https://www.instagram.com/lukas.wisesa/"
+            onClick={() => {
+              openInNewTab("https://www.instagram.com/lukas.wisesa/");
+            }}
+          />
         </div>
       </div>
       {/* right image side */}
       <div className="i-right">
         <img src={Vector1} alt="" />
         <img src={Vector2} alt="" />
-        <img src={boy} alt="" />
+        {/* <img src={boy} alt="" /> */}
         {/* animation */}
         <motion.img
           initial={{ left: "-36%" }}
